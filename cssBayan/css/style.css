@@ -2,6 +2,8 @@
     width: 100%;
     display: flex;
     justify-content: center;
+    height: auto;
+    margin: 3em 0;
 }
 
 .container {
@@ -10,7 +12,7 @@
     justify-content: center;
     height: auto;
     flex-direction: column;
-    gap: 5em;
+    gap: 1em;
     width: 100%;
     max-width: 900px;
 }
@@ -20,6 +22,7 @@
     flex-direction: column;
     align-items: center;
     width: 100%;
+    border-top: 1px solid;
 
 }
 
@@ -27,19 +30,119 @@
     display: flex;
     justify-content: space-between;
     width: 100%;
-    padding: 10 0;
+    padding: 10px 0;
 }
 
 .title {
-    font-size: large;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
-
+    font-size: 1.5em;
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+    color: blue;
 }
 
 img {
-    width: 500px;
+    width: 50px;
+    border: 1px solid;
+    margin: 5px;
 }
 
-.icon {
-    width: 30px;
+.icons {
+    display: none;
+    width: 50px;
+}
+
+.close-meme{
+    width: 50px;
+    display: none;
+}
+
+.main-container:hover .container .card-title .icons {
+    display: block;
+}
+
+.main-container:hover .container .card-title .title {
+    color: black;
+}
+
+.meme {
+    display: none;
+}
+
+/* #card_1 .meme,
+#card_1 .close-meme {
+    display: block;
+} */
+
+/* #card_1 .title {
+    color: black;
+} */
+
+/* #card_1 .open-meme {
+    display: none;
+} */
+
+#card_1:hover .open-meme,
+#card_2:hover .open-meme,
+#card_3:hover .open-meme,
+#card_4:hover .open-meme,
+#card_5:hover .open-meme {
+    display: none;
+}
+
+#card_1:hover .close-meme,
+#card_2:hover .close-meme,
+#card_3:hover .close-meme,
+#card_4:hover .close-meme,
+#card_5:hover .close-meme {
+    display: block;
+}
+
+#card_1:hover .title,
+#card_2:hover .title,
+#card_3:hover .title,
+#card_4:hover .title,
+#card_5:hover .title {
+    color:black;
+}
+
+#card_1:hover .meme,
+#card_2:hover .meme,
+#card_3:hover .meme,
+#card_4:hover .meme,
+#card_5:hover .meme {
+    display: block;
+}
+
+/* #card_1:target .meme,
+#card_2:target .meme,
+#card_3:target .meme,
+#card_4:target .meme,
+#card_5:target .meme {
+    display:block;
+} */
+
+input[type="radio"] {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+
+}
+
+/* input[type="radio"]:checked:before .meme{
+    display: block;
+} */
+
+input:checked + label .meme{
+    display: block;
+}
+
+input:checked + label .close-meme{
+    display: block;
+}
+
+input:checked + label .open-meme{
+    display: none;
+}
+
+input:checked + label .title{
+    color: black;
 }
