@@ -2,6 +2,7 @@
     width: 100%;
     display: flex;
     justify-content: center;
+    align-items:center;
     height: auto;
     margin: 3em 0;
 }
@@ -14,7 +15,15 @@
     flex-direction: column;
     gap: 1em;
     width: 100%;
-    max-width: 900px;
+    max-width: 56em;
+}
+
+.card-wrapper {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    border-top: 0.006em solid;
+
 }
 
 .card {
@@ -22,7 +31,6 @@
     flex-direction: column;
     align-items: center;
     width: 100%;
-    border-top: 1px solid;
 
 }
 
@@ -30,7 +38,7 @@
     display: flex;
     justify-content: space-between;
     width: 100%;
-    padding: 10px 0;
+    padding: 1em 0;
 }
 
 .title {
@@ -40,23 +48,24 @@
 }
 
 img {
-    width: 50px;
-    border: 1px solid;
-    margin: 5px;
+    width: 35em;
+    border: 0.07em solid;
+    margin: 0.5em;
 }
 
 .icons {
     display: none;
-    width: 50px;
+    width: 4em;
 }
 
 .close-meme{
-    width: 50px;
+    width: 4em;
     display: none;
 }
 
 .main-container:hover .container .card-title .icons {
     display: block;
+    transition: all 0.2s ease-in-out;
 }
 
 .main-container:hover .container .card-title .title {
@@ -65,20 +74,11 @@ img {
 
 .meme {
     display: none;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
 }
-
-/* #card_1 .meme,
-#card_1 .close-meme {
-    display: block;
-} */
-
-/* #card_1 .title {
-    color: black;
-} */
-
-/* #card_1 .open-meme {
-    display: none;
-} */
 
 #card_1:hover .open-meme,
 #card_2:hover .open-meme,
@@ -94,6 +94,7 @@ img {
 #card_4:hover .close-meme,
 #card_5:hover .close-meme {
     display: block;
+    transition: all 0.7s;
 }
 
 #card_1:hover .title,
@@ -109,16 +110,9 @@ img {
 #card_3:hover .meme,
 #card_4:hover .meme,
 #card_5:hover .meme {
-    display: block;
+    display: flex;
 }
 
-/* #card_1:target .meme,
-#card_2:target .meme,
-#card_3:target .meme,
-#card_4:target .meme,
-#card_5:target .meme {
-    display:block;
-} */
 
 input[type="radio"] {
     -webkit-appearance: none;
@@ -127,12 +121,8 @@ input[type="radio"] {
 
 }
 
-/* input[type="radio"]:checked:before .meme{
-    display: block;
-} */
-
 input:checked + label .meme{
-    display: block;
+    display: flex;
 }
 
 input:checked + label .close-meme{
@@ -146,3 +136,56 @@ input:checked + label .open-meme{
 input:checked + label .title{
     color: black;
 }
+
+label:hover {
+    cursor: pointer;
+}
+
+@media (any-hover:hover) {
+    input:hover ~ label .meme > img {
+        max-width: 100%;
+        transition: all 0.8s ease-in 0s;
+    }
+
+    input:hover ~ label .title_box > .plus_icon {
+        opacity: 1;
+        transition: 0.5s;
+    }
+}
+
+@media (min-width: 320px) {
+    input:checked ~ label .meme > img {
+        max-width: 80%;
+        transition: 0.5s;
+    }
+
+    .title {
+        font-size: 1em;
+    }
+}
+
+@media (min-width: 820px) {
+    .title {
+        font-size: 2.5em;
+    }
+}
+
+@media (min-width: 1920px) {
+    .title {
+        font-size: 2em;
+    }
+}
+
+img:hover {
+    color: black;
+    background: rgb(222, 222, 16);
+    border: 1em solid yellow;
+  }
+
+  @media (hover: hover) {
+    /* when hover is supported */
+    img:hover {
+      color: white;
+      background: black;
+    }
+  }
